@@ -1,8 +1,29 @@
 
-.images {
+.slider-div {
+    width: 100%;
+}
+
+#image-container {
+    position: relative;
     width: 400%;
 }
 
 img {
     display: inline-block;
+}
+
+.nav-btn {
+    font-size: 60px;
+    position: absolute;
+    top: 50%;
+    z-index: 99;
+}
+
+#nav-btn-left {
+    padding-left: 20px;
+}
+
+#nav-btn-right {
+    right: 0;
+    padding-right: 20px;
 }

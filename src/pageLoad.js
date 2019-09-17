@@ -1,4 +1,6 @@
 import slider from "./slider";
+import navigation from "./navigation";
+
 
 function pageLoad() {
 
@@ -9,6 +11,7 @@ function pageLoad() {
 
     element.innerHTML = title + nav;
     element.appendChild(slider());
+    navigation();
 
     return element;
 }
