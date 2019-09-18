@@ -1,8 +1,7 @@
 import slider from "./slider";
-import navigation from "./navigation";
 
 
-function pageLoad() {
+const pageLoad = () => {
 
     let element = document.createElement('div');
         
@@ -11,7 +10,6 @@ function pageLoad() {
 
     element.innerHTML = title + nav;
     element.appendChild(slider());
-    navigation();
 
     return element;
 }

@@ -1,5 +1,5 @@
-//import pageLoad file
 import pageLoad from './pageLoad';
+import navigation from "./navigation";
 
 document.body.appendChild(pageLoad());
 
@@ -27,8 +27,7 @@ function showContent(tab) {
     return tabDiv;
 }
 
-
 document.body.appendChild(tabDiv);
 
-
+navigation();
 

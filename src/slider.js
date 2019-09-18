@@ -12,6 +12,7 @@ const slider = () => {
 
     element.innerHTML = buttons + "<div id=\"image-container\">" + img1 + img2 + img3 + "</div>";
 
+    
 
     return element;
 }
