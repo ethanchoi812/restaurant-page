@@ -11,15 +11,22 @@ const navigation = () => {
 
     navLeft.addEventListener("click", () => {
         pos = imgContainer.offsetLeft;
-        imgContainer.style.left = `${pos - offset}px`;
+        console.log(pos);
 
+        if ( pos < 0) {
+            imgContainer.style.left = `${pos + offset}px`;
+        }
         return pos;
     });
 
     navRight.addEventListener("click", () => {
         pos = imgContainer.offsetLeft;
-        imgContainer.style.left = `${pos + offset}px`;
+        console.log(pos);
+        console.log(imgContainer.offsetWidth);
 
+        if ( Math.abs(pos) < (imgContainer.offsetWidth * 3/4) ) {
+            imgContainer.style.left = `${pos - offset}px`;
+        }
         return pos;
     });
 

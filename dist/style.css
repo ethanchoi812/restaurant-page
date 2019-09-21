@@ -16,6 +16,7 @@ body {
 
 img {
     display: inline-block;
+    width: 25%;
 }
 
 .nav-btn {
