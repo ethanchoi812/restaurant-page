@@ -7,25 +7,24 @@ const navigation = () => {
     let navRight = document.getElementById("nav-btn-right");
     
     let offset = sliderDiv.offsetWidth;
-    let pos;
+    let pos = 0;
 
     navLeft.addEventListener("click", () => {
-        pos = imgContainer.offsetLeft;
-        console.log(pos);
+        //event.preventDefault();
 
-        if ( pos < 0) {
-            imgContainer.style.left = `${pos + offset}px`;
+        if ( pos < 4 && pos > 0 ) {
+            pos -= 1;
+            imgContainer.style.transform = `translate(-${pos * offset}px)`;
         }
         return pos;
     });
 
     navRight.addEventListener("click", () => {
-        pos = imgContainer.offsetLeft;
-        console.log(pos);
-        console.log(imgContainer.offsetWidth);
+        //event.preventDefault();
 
-        if ( Math.abs(pos) < (imgContainer.offsetWidth * 3/4) ) {
-            imgContainer.style.left = `${pos - offset}px`;
+        if ( pos < 3 ) {
+            pos += 1;
+            imgContainer.style.transform = `translate(-${pos * offset}px)`;
         }
         return pos;
     });
