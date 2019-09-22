@@ -6,11 +6,10 @@ const navigation = () => {
     let navLeft = document.getElementById("nav-btn-left");
     let navRight = document.getElementById("nav-btn-right");
     
-    let offset = sliderDiv.offsetWidth;
     let pos = 0;
 
     navLeft.addEventListener("click", () => {
-        //event.preventDefault();
+        let offset = sliderDiv.offsetWidth;
 
         if ( pos < 4 && pos > 0 ) {
             pos -= 1;
@@ -20,7 +19,7 @@ const navigation = () => {
     });
 
     navRight.addEventListener("click", () => {
-        //event.preventDefault();
+        let offset = sliderDiv.offsetWidth;
 
         if ( pos < 3 ) {
             pos += 1;
