@@ -14,6 +14,14 @@ const slider = () => {
   let img4 =
     '<img id="slide-4" src="https://via.placeholder.com/1280x384/00FF00">';
 
+  let marker =
+    '<div class="slide-marker">' +
+    '<span id="slide-marker-0"></span>' +
+    '<span id="slide-marker-1"></span>' +
+    '<span id="slide-marker-2"></span>' +
+    '<span id="slide-marker-3"></span>' +
+    "</div>";
+
   element.innerHTML =
     buttons +
     '<div id="image-container">' +
@@ -21,7 +29,8 @@ const slider = () => {
     img2 +
     img3 +
     img4 +
-    "</div>";
+    "</div>" +
+    marker;
 
   return element;
 };
