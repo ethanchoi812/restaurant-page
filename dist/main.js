@@ -60,7 +60,7 @@
       e.className = "slider-div";
       return (
         (e.innerHTML =
-          '<span class="nav-btn" id="nav-btn-left">&lt;</span><span class="nav-btn" id="nav-btn-right">&gt;</span><div id="image-container"><img id="slide-1" src="https://via.placeholder.com/1280x384/0000FF"><img id="slide-2" src="https://via.placeholder.com/1280x384/FF0000"><img id="slide-3" src="https://via.placeholder.com/1280x384/FFFF00"><img id="slide-4" src="https://via.placeholder.com/1280x384/00FF00"></div><div class="slide-marker"><span id="slide-marker-0"></span><span id="slide-marker-1"></span><span id="slide-marker-2"></span><span id="slide-marker-3"></span></div>'),
+          '<span class="nav-btn" id="nav-btn-left">&lt;</span><span class="nav-btn" id="nav-btn-right">&gt;</span><div id="image-container"><img src="https://via.placeholder.com/1280x384/0000FF"><img src="https://via.placeholder.com/1280x384/FF0000"><img src="https://via.placeholder.com/1280x384/FFFF00"><img src="https://via.placeholder.com/1280x384/00FF00"></div><div class="slide-marker"><span id="slide-marker-0" data-slide-index="0"></span><span id="slide-marker-1" data-slide-index="1"></span><span id="slide-marker-2" data-slide-index="2"></span><span id="slide-marker-3" data-slide-index="3"></span></div>'),
         e
       );
     };
@@ -73,43 +73,39 @@
         e
       );
     };
-    var d = e => {
-      document.querySelectorAll(".slide-marker span").forEach(e => {
-        e.style.background = "#ccc";
-      }),
-        (document.getElementById(`slide-marker-${e}`).style.background =
-          "#fff");
-    };
-    var a = () => {
-      let e = document.querySelector(".slider-div"),
-        t = document.getElementById("image-container"),
-        n = document.getElementById("nav-btn-left"),
-        r = document.getElementById("nav-btn-right"),
-        i = 0;
-      d(i),
-        n.addEventListener("click", () => {
-          let n = e.offsetWidth;
-          return (
-            i < 4 &&
-              i > 0 &&
-              ((i -= 1), (t.style.transform = `translate(-${i * n}px)`), d(i)),
-            i
-          );
+    var a = e => {
+      let t = document.querySelector(".slider-div").offsetWidth;
+      document.getElementById(
+        "image-container"
+      ).style.transform = `translate(-${e * t}px)`;
+      let n = document.querySelectorAll(".slide-marker span"),
+        r = document.getElementById(`slide-marker-${e}`);
+      return (
+        n.forEach(e => {
+          (e.style.background = "#ccc"), (r.style.background = "#fff");
         }),
-        r.addEventListener("click", () => {
-          let n = e.offsetWidth;
-          return (
-            i < 3 &&
-              ((i += 1), (t.style.transform = `translate(-${i * n}px)`), d(i)),
-            i
-          );
-        });
+        e
+      );
+    };
+    var d = e => {
+      let t = document.getElementById("nav-btn-left"),
+        n = document.getElementById("nav-btn-right");
+      t.addEventListener("click", () => (e < 4 && e > 0 && a((e -= 1)), e)),
+        n.addEventListener("click", () => (e < 3 && a((e += 1)), e));
+    };
+    var l = e => {
+      document.querySelectorAll(".slide-marker span").forEach(t => {
+        t.addEventListener(
+          "click",
+          () => ((e = t.dataset.slideIndex), a(e), e)
+        );
+      });
     };
     document.body.appendChild(i());
-    const l = document.createElement("div");
-    let c = document.getElementById("menu"),
-      o = document.getElementById("contact");
-    function s(e) {
+    const c = document.createElement("div");
+    let o = document.getElementById("menu"),
+      s = document.getElementById("contact");
+    function u(e) {
       let t;
       return (
         (t =
@@ -118,17 +114,17 @@
             : "contact" === e
             ? "Contact here"
             : ""),
-        (l.innerHTML = t),
-        l
+        (c.innerHTML = t),
+        c
       );
     }
-    (c.onclick = function(e) {
-      s("menu");
+    (o.onclick = function(e) {
+      u("menu");
     }),
-      (o.onclick = function(e) {
-        s("contact");
+      (s.onclick = function(e) {
+        u("contact");
       }),
-      document.body.appendChild(l),
-      a();
+      document.body.appendChild(c);
+    d(0), l(0);
   }
 ]);

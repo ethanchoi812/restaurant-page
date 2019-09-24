@@ -1,5 +1,6 @@
 import pageLoad from "./pageLoad";
 import navigation from "./navigation";
+import clickSlide from "./clickSlide";
 
 document.body.appendChild(pageLoad());
 
@@ -32,4 +33,7 @@ function showContent(tab) {
 
 document.body.appendChild(tabDiv);
 
-navigation();
+let slidePosition = 0;
+
+navigation(slidePosition);
+clickSlide(slidePosition);
