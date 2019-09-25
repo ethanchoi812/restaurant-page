@@ -4,17 +4,23 @@ import clickSlide from "./clickSlide";
 
 document.body.appendChild(pageLoad());
 
+let slidePosition = 0;
+
+navigation(slidePosition);
+clickSlide(slidePosition);
+
 const tabDiv = document.createElement("div");
 
 let menu = document.getElementById("menu");
 let contact = document.getElementById("contact");
 
-menu.onclick = function(e) {
+menu.addEventListener("click", () => {
   showContent("menu");
-};
-contact.onclick = function(e) {
+});
+
+contact.addEventListener("click", () => {
   showContent("contact");
-};
+});
 
 function showContent(tab) {
   let tabContent;
@@ -32,8 +38,3 @@ function showContent(tab) {
 }
 
 document.body.appendChild(tabDiv);
-
-let slidePosition = 0;
-
-navigation(slidePosition);
-clickSlide(slidePosition);

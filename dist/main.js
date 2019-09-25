@@ -2,8 +2,8 @@
   var t = {};
   function n(r) {
     if (t[r]) return t[r].exports;
-    var i = (t[r] = { i: r, l: !1, exports: {} });
-    return e[r].call(i.exports, i, i.exports, n), (i.l = !0), i.exports;
+    var d = (t[r] = { i: r, l: !1, exports: {} });
+    return e[r].call(d.exports, d, d.exports, n), (d.l = !0), d.exports;
   }
   (n.m = e),
     (n.c = t),
@@ -25,13 +25,13 @@
         Object.defineProperty(r, "default", { enumerable: !0, value: e }),
         2 & t && "string" != typeof e)
       )
-        for (var i in e)
+        for (var d in e)
           n.d(
             r,
-            i,
+            d,
             function(t) {
               return e[t];
-            }.bind(null, i)
+            }.bind(null, d)
           );
       return r;
     }),
@@ -64,7 +64,7 @@
         e
       );
     };
-    var i = () => {
+    var d = () => {
       let e = document.createElement("div");
       return (
         (e.innerHTML =
@@ -87,7 +87,7 @@
         e
       );
     };
-    var d = e => {
+    var i = e => {
       let t = document.getElementById("nav-btn-left"),
         n = document.getElementById("nav-btn-right");
       t.addEventListener("click", () => (e < 4 && e > 0 && a((e -= 1)), e)),
@@ -101,7 +101,8 @@
         );
       });
     };
-    document.body.appendChild(i());
+    document.body.appendChild(d());
+    i(0), l(0);
     const c = document.createElement("div");
     let o = document.getElementById("menu"),
       s = document.getElementById("contact");
@@ -118,13 +119,12 @@
         c
       );
     }
-    (o.onclick = function(e) {
+    o.addEventListener("click", () => {
       u("menu");
     }),
-      (s.onclick = function(e) {
+      s.addEventListener("click", () => {
         u("contact");
       }),
       document.body.appendChild(c);
-    d(0), l(0);
   }
 ]);
