@@ -1,13 +1,13 @@
 import pageLoad from "./pageLoad";
 import navigation from "./navigation";
-import clickSlide from "./clickSlide";
+//import clickSlide from "./clickSlide";
 
 document.body.appendChild(pageLoad());
 
 let slidePosition = 0;
 
 navigation(slidePosition);
-clickSlide(slidePosition);
+//clickSlide(slidePosition);
 
 const tabDiv = document.createElement("div");
 

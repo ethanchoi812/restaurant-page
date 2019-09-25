@@ -73,40 +73,35 @@
         e
       );
     };
-    var a = e => {
+    var i = e => {
       let t = document.querySelector(".slider-div").offsetWidth;
       document.getElementById(
         "image-container"
       ).style.transform = `translate(-${e * t}px)`;
       let n = document.querySelectorAll(".slide-marker span"),
         r = document.getElementById(`slide-marker-${e}`);
-      return (
-        n.forEach(e => {
-          (e.style.background = "#ccc"), (r.style.background = "#fff");
-        }),
-        e
-      );
-    };
-    var i = e => {
-      let t = document.getElementById("nav-btn-left"),
-        n = document.getElementById("nav-btn-right");
-      t.addEventListener("click", () => (e < 4 && e > 0 && a((e -= 1)), e)),
-        n.addEventListener("click", () => (e < 3 && a((e += 1)), e));
-    };
-    var l = e => {
-      document.querySelectorAll(".slide-marker span").forEach(t => {
-        t.addEventListener(
-          "click",
-          () => ((e = t.dataset.slideIndex), a(e), e)
-        );
+      n.forEach(e => {
+        (e.style.background = "#ccc"), (r.style.background = "#fff");
       });
     };
+    var a = () => {
+      let e = document.getElementById("nav-btn-left"),
+        t = document.getElementById("nav-btn-right"),
+        n = 0;
+      e.addEventListener("click", () => (n < 4 && n > 0 && i((n -= 1)), n)),
+        t.addEventListener("click", () => (n < 3 && n > -1 && i((n += 1)), n)),
+        document.querySelectorAll(".slide-marker span").forEach(e => {
+          e.addEventListener("click", () => {
+            (n = Number(e.dataset.slideIndex)), i(n);
+          });
+        });
+    };
     document.body.appendChild(d());
-    i(0), l(0);
-    const c = document.createElement("div");
-    let o = document.getElementById("menu"),
-      s = document.getElementById("contact");
-    function u(e) {
+    a(0);
+    const l = document.createElement("div");
+    let c = document.getElementById("menu"),
+      o = document.getElementById("contact");
+    function s(e) {
       let t;
       return (
         (t =
@@ -115,16 +110,16 @@
             : "contact" === e
             ? "Contact here"
             : ""),
-        (c.innerHTML = t),
-        c
+        (l.innerHTML = t),
+        l
       );
     }
-    o.addEventListener("click", () => {
-      u("menu");
+    c.addEventListener("click", () => {
+      s("menu");
     }),
-      s.addEventListener("click", () => {
-        u("contact");
+      o.addEventListener("click", () => {
+        s("contact");
       }),
-      document.body.appendChild(c);
+      document.body.appendChild(l);
   }
 ]);

@@ -12,8 +12,6 @@ const showSlide = pos => {
     marker.style.background = "#ccc";
     slideMark.style.background = "#fff";
   });
-
-  return pos;
 };
 
 export default showSlide;

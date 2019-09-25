@@ -1,8 +1,9 @@
 import showSlide from "./showSlide";
 
-const navigation = pos => {
+const navigation = () => {
   let navLeft = document.getElementById("nav-btn-left");
   let navRight = document.getElementById("nav-btn-right");
+  let pos = 0;
 
   navLeft.addEventListener("click", () => {
     if (pos < 4 && pos > 0) {
@@ -13,11 +14,20 @@ const navigation = pos => {
   });
 
   navRight.addEventListener("click", () => {
-    if (pos < 3) {
+    if (pos < 3 && pos > -1) {
       pos += 1;
       showSlide(pos);
     }
     return pos;
+  });
+
+  let markers = document.querySelectorAll(".slide-marker span");
+
+  markers.forEach(marker => {
+    marker.addEventListener("click", () => {
+      pos = Number(marker.dataset.slideIndex);
+      showSlide(pos);
+    });
   });
 };
 
