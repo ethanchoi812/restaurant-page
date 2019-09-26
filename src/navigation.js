@@ -5,6 +5,8 @@ const navigation = () => {
   let navRight = document.getElementById("nav-btn-right");
   let pos = 0;
 
+  showSlide(pos);
+
   navLeft.addEventListener("click", () => {
     if (pos < 4 && pos > 0) {
       pos -= 1;

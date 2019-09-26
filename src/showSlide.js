@@ -10,8 +10,9 @@ const showSlide = pos => {
 
   markers.forEach(marker => {
     marker.style.background = "#ccc";
-    slideMark.style.background = "#fff";
   });
+
+  slideMark.style.background = "#fff";
 };
 
 export default showSlide;

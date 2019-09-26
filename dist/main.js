@@ -2,8 +2,8 @@
   var t = {};
   function n(r) {
     if (t[r]) return t[r].exports;
-    var d = (t[r] = { i: r, l: !1, exports: {} });
-    return e[r].call(d.exports, d, d.exports, n), (d.l = !0), d.exports;
+    var i = (t[r] = { i: r, l: !1, exports: {} });
+    return e[r].call(i.exports, i, i.exports, n), (i.l = !0), i.exports;
   }
   (n.m = e),
     (n.c = t),
@@ -25,13 +25,13 @@
         Object.defineProperty(r, "default", { enumerable: !0, value: e }),
         2 & t && "string" != typeof e)
       )
-        for (var d in e)
+        for (var i in e)
           n.d(
             r,
-            d,
+            i,
             function(t) {
               return e[t];
-            }.bind(null, d)
+            }.bind(null, i)
           );
       return r;
     }),
@@ -64,16 +64,17 @@
         e
       );
     };
-    var d = () => {
+    var i = () => {
       let e = document.createElement("div");
       return (
         (e.innerHTML =
           '<h1>The City Restaurant</h1><div><ul id="nav"><li id="menu">Menu</li><li id="contact">Contact</li></ul></div>'),
         e.appendChild(r()),
+        (e.innerHTML += '<div id="pageContent"></div>'),
         e
       );
     };
-    var i = e => {
+    var a = e => {
       let t = document.querySelector(".slider-div").offsetWidth;
       document.getElementById(
         "image-container"
@@ -81,45 +82,42 @@
       let n = document.querySelectorAll(".slide-marker span"),
         r = document.getElementById(`slide-marker-${e}`);
       n.forEach(e => {
-        (e.style.background = "#ccc"), (r.style.background = "#fff");
-      });
+        e.style.background = "#ccc";
+      }),
+        (r.style.background = "#fff");
     };
-    var a = () => {
+    var d = () => {
       let e = document.getElementById("nav-btn-left"),
         t = document.getElementById("nav-btn-right"),
         n = 0;
-      e.addEventListener("click", () => (n < 4 && n > 0 && i((n -= 1)), n)),
-        t.addEventListener("click", () => (n < 3 && n > -1 && i((n += 1)), n)),
+      a(n),
+        e.addEventListener("click", () => (n < 4 && n > 0 && a((n -= 1)), n)),
+        t.addEventListener("click", () => (n < 3 && n > -1 && a((n += 1)), n)),
         document.querySelectorAll(".slide-marker span").forEach(e => {
           e.addEventListener("click", () => {
-            (n = Number(e.dataset.slideIndex)), i(n);
+            (n = Number(e.dataset.slideIndex)), a(n);
           });
         });
     };
-    document.body.appendChild(d());
-    a(0);
-    const l = document.createElement("div");
-    let c = document.getElementById("menu"),
-      o = document.getElementById("contact");
-    function s(e) {
-      let t;
-      return (
-        (t =
-          "menu" === e
-            ? "This is my menu"
-            : "contact" === e
-            ? "Contact here"
-            : ""),
-        (l.innerHTML = t),
-        l
-      );
-    }
-    c.addEventListener("click", () => {
-      s("menu");
-    }),
-      o.addEventListener("click", () => {
-        s("contact");
-      }),
-      document.body.appendChild(l);
+    var l = () => {
+      let e = document.getElementById("pageContent"),
+        t = "",
+        n = document.querySelectorAll("#nav li"),
+        r = "";
+      n.forEach(n => {
+        n.addEventListener("click", () => {
+          (r = n.id),
+            (t =
+              "menu" === r
+                ? "This is my menu"
+                : "contact" === r
+                ? "Contact here"
+                : ""),
+            (e.innerHTML = t);
+        });
+      });
+    };
+    document.body.appendChild(i());
+    d(0), l();
   }
 ]);
