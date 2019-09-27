@@ -2,8 +2,8 @@
   var t = {};
   function n(r) {
     if (t[r]) return t[r].exports;
-    var i = (t[r] = { i: r, l: !1, exports: {} });
-    return e[r].call(i.exports, i, i.exports, n), (i.l = !0), i.exports;
+    var a = (t[r] = { i: r, l: !1, exports: {} });
+    return e[r].call(a.exports, a, a.exports, n), (a.l = !0), a.exports;
   }
   (n.m = e),
     (n.c = t),
@@ -25,13 +25,13 @@
         Object.defineProperty(r, "default", { enumerable: !0, value: e }),
         2 & t && "string" != typeof e)
       )
-        for (var i in e)
+        for (var a in e)
           n.d(
             r,
-            i,
+            a,
             function(t) {
               return e[t];
-            }.bind(null, i)
+            }.bind(null, a)
           );
       return r;
     }),
@@ -64,7 +64,7 @@
         e
       );
     };
-    var i = () => {
+    var a = () => {
       let e = document.createElement("div");
       return (
         (e.innerHTML =
@@ -74,7 +74,16 @@
         e
       );
     };
-    var a = e => {
+    var i = () => {
+      let e = document.querySelector(".slider-div"),
+        t = e.offsetWidth;
+      console.log(t);
+      let n = e.style.translate;
+      console.log(n);
+      let r = n / t;
+      return console.log(r), r;
+    };
+    var l = e => {
       let t = document.querySelector(".slider-div").offsetWidth;
       document.getElementById(
         "image-container"
@@ -84,22 +93,23 @@
       n.forEach(e => {
         e.style.background = "#ccc";
       }),
-        (r.style.background = "#fff");
+        (r.style.background = "#fff"),
+        i();
     };
     var d = () => {
       let e = document.getElementById("nav-btn-left"),
         t = document.getElementById("nav-btn-right"),
         n = 0;
-      a(n),
-        e.addEventListener("click", () => (n < 4 && n > 0 && a((n -= 1)), n)),
-        t.addEventListener("click", () => (n < 3 && n > -1 && a((n += 1)), n)),
+      l(n),
+        e.addEventListener("click", () => (n < 4 && n > 0 && l((n -= 1)), n)),
+        t.addEventListener("click", () => (n < 3 && n > -1 && l((n += 1)), n)),
         document.querySelectorAll(".slide-marker span").forEach(e => {
           e.addEventListener("click", () => {
-            (n = Number(e.dataset.slideIndex)), a(n);
+            (n = Number(e.dataset.slideIndex)), l(n);
           });
         });
     };
-    var l = () => {
+    var o = () => {
       let e = document.getElementById("pageContent"),
         t = "",
         n = document.querySelectorAll("#nav li"),
@@ -117,7 +127,13 @@
         });
       });
     };
-    document.body.appendChild(i());
-    d(0), l();
+    var c = () => {
+      setInterval(() => {
+        let e = 0;
+        e < 4 && (l(e), e++), 4 === e && (e = 0);
+      }, 5e3);
+    };
+    document.body.appendChild(a());
+    d(0), i(), c(), o();
   }
 ]);
