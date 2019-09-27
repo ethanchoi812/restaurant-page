@@ -1,5 +1,3 @@
-import getPosition from "./getPosition";
-
 const showSlide = pos => {
   let sliderDiv = document.querySelector(".slider-div");
   let offset = sliderDiv.offsetWidth;
@@ -15,8 +13,6 @@ const showSlide = pos => {
   });
 
   slideMark.style.background = "#fff";
-
-  getPosition();
 };
 
 export default showSlide;

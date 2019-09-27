@@ -1,9 +1,9 @@
 import showSlide from "./showSlide";
 
-const navigation = () => {
+const navigation = slidePosition => {
   let navLeft = document.getElementById("nav-btn-left");
   let navRight = document.getElementById("nav-btn-right");
-  let pos = 0;
+  let pos = slidePosition;
 
   showSlide(pos);
 
@@ -16,7 +16,7 @@ const navigation = () => {
   });
 
   navRight.addEventListener("click", () => {
-    if (pos < 3 && pos > -1) {
+    if (pos < 3 && pos >= 0) {
       pos += 1;
       showSlide(pos);
     }
@@ -31,6 +31,18 @@ const navigation = () => {
       showSlide(pos);
     });
   });
+
+  setInterval(() => {
+    if (pos < 4) {
+      showSlide(pos);
+      pos++;
+    }
+    if (pos === 4) {
+      pos = 0;
+    }
+
+    return pos;
+  }, 5000);
 };
 
 export default navigation;
