@@ -1,24 +1,28 @@
 const showContent = () => {
   let contentDiv = document.getElementById("pageContent");
-  let tabContent = "";
+  let tabContent = "Restaurant menu";
+
+  contentDiv.innerHTML = tabContent;
 
   let navItems = document.querySelectorAll("#nav li");
-  let tab = "";
+  let tab;
 
   navItems.forEach(nav => {
     nav.addEventListener("click", () => {
       tab = nav.id;
-
-      if (tab === "menu") {
-        tabContent = "This is my menu";
-      } else if (tab === "contact") {
-        tabContent = "Contact here";
-      } else {
-        tabContent = "";
-      }
-      contentDiv.innerHTML = tabContent;
+      setContent(tab);
     });
   });
+
+  const setContent = tab => {
+    if (tab === "menu") {
+      tabContent = "Restaurant menu";
+    } else if (tab === "contact") {
+      tabContent = "Contact here";
+    }
+
+    contentDiv.innerHTML = tabContent;
+  };
 };
 
 export default showContent;

@@ -1,5 +1,4 @@
 import slider from "./slider";
-//import showContent from "./showContent";
 
 const pageLoad = () => {
   let element = document.createElement("div");
