@@ -87,18 +87,34 @@
         (r.style.background = "#fff");
     };
     var d = e => {
-      let t = document.getElementById("nav-btn-left"),
-        n = document.getElementById("nav-btn-right"),
-        r = e;
-      i(r),
-        t.addEventListener("click", () => (r < 4 && r > 0 && i((r -= 1)), r)),
-        n.addEventListener("click", () => (r < 3 && r >= 0 && i((r += 1)), r)),
+      let t,
+        n = document.getElementById("nav-btn-left"),
+        r = document.getElementById("nav-btn-right"),
+        a = e;
+      const d = () => {
+          t = setInterval(
+            () => (a < 4 && (i(a), a++), 4 === a && (a = 0), a),
+            4e3
+          );
+        },
+        l = () => {
+          clearInterval(t);
+        };
+      i(a),
+        d(),
+        n.addEventListener(
+          "click",
+          () => (l(), a < 4 && a > 0 && i((a -= 1)), d(), a)
+        ),
+        r.addEventListener(
+          "click",
+          () => (l(), a < 3 && a >= 0 && i((a += 1)), d(), a)
+        ),
         document.querySelectorAll(".slide-marker span").forEach(e => {
           e.addEventListener("click", () => {
-            (r = Number(e.dataset.slideIndex)), i(r);
+            l(), (a = Number(e.dataset.slideIndex)), i(a), d();
           });
-        }),
-        setInterval(() => (r < 4 && (i(r), r++), 4 === r && (r = 0), r), 5e3);
+        });
     };
     var l = () => {
       let e,
