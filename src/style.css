@@ -1,9 +1,3 @@
-@font-face {
-  font-family: "EB Garamond";
-  src: url("./EBGaramond-Regular.tff");
-  font-style: normal;
-}
-
 .main {
   margin: 0;
   font-family: "EB Garamond", serif;
