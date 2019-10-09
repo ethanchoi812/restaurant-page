@@ -1,8 +1,11 @@
+import contact from "./contact";
+import menuContent from "./menuContent";
+
 const showContent = () => {
   let contentDiv = document.getElementById("pageContent");
-  let tabContent = "Restaurant menu";
+  let tabContent = menuContent();
 
-  contentDiv.innerHTML = tabContent;
+  contentDiv.innerHTML = tabContent.outerHTML;
 
   let navItems = document.querySelectorAll("#nav li");
   let tab;
@@ -16,12 +19,12 @@ const showContent = () => {
 
   const setContent = tab => {
     if (tab === "menu") {
-      tabContent = "Restaurant menu";
+      tabContent = menuContent();
     } else if (tab === "contact") {
-      tabContent = "Contact here";
+      tabContent = contact();
     }
 
-    contentDiv.innerHTML = tabContent;
+    contentDiv.innerHTML = tabContent.outerHTML;
   };
 };
 

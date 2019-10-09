@@ -178,14 +178,14 @@
           o = 0;
         if (a) {
           for (a.refs++; o < a.parts.length; o++) a.parts[o](r.parts[o]);
-          for (; o < r.parts.length; o++) a.parts.push(h(r.parts[o], e));
+          for (; o < r.parts.length; o++) a.parts.push(b(r.parts[o], e));
         } else {
-          for (var c = []; o < r.parts.length; o++) c.push(h(r.parts[o], e));
+          for (var c = []; o < r.parts.length; o++) c.push(b(r.parts[o], e));
           i[r.id] = { id: r.id, refs: 1, parts: c };
         }
       }
     }
-    function u(n) {
+    function d(n) {
       var e = document.createElement("style");
       if (void 0 === n.attributes.nonce) {
         var r = t.nc;
@@ -208,11 +208,11 @@
       }
       return e;
     }
-    var d,
+    var u,
       l =
-        ((d = []),
+        ((u = []),
         function(n, e) {
-          return (d[n] = e), d.filter(Boolean).join("\n");
+          return (u[n] = e), u.filter(Boolean).join("\n");
         });
     function f(n, e, t, r) {
       var i = t ? "" : r.css;
@@ -246,15 +246,15 @@
     }
     var v = null,
       m = 0;
-    function h(n, e) {
+    function b(n, e) {
       var t, r, i;
       if (e.singleton) {
         var a = m++;
-        (t = v || (v = u(e))),
+        (t = v || (v = d(e))),
           (r = f.bind(null, t, a, !1)),
           (i = f.bind(null, t, a, !0));
       } else
-        (t = u(e)),
+        (t = d(e)),
           (r = p.bind(null, t, e)),
           (i = function() {
             !(function(n) {
@@ -287,12 +287,12 @@
         function(n) {
           for (var r = [], a = 0; a < t.length; a++) {
             var o = t[a],
-              u = i[o.id];
-            u && (u.refs--, r.push(u));
+              d = i[o.id];
+            d && (d.refs--, r.push(d));
           }
           n && s(c(n, e), e);
-          for (var d = 0; d < r.length; d++) {
-            var l = r[d];
+          for (var u = 0; u < r.length; u++) {
+            var l = r[u];
             if (0 === l.refs) {
               for (var f = 0; f < l.parts.length; f++) l.parts[f]();
               delete i[l.id];
@@ -312,8 +312,8 @@
       o = t.n(a),
       c = t(2),
       s = t.n(c),
-      u = t(3),
-      d = t.n(u),
+      d = t(3),
+      u = t.n(d),
       l = function(n) {
         var e = new Image();
         return (e.src = n), e;
@@ -322,7 +322,7 @@
         var n = l(i.a),
           e = l(o.a),
           t = l(s.a),
-          r = l(d.a),
+          r = l(u.a),
           a = document.createElement("div");
         a.setAttribute("id", "image-container"),
           (a.innerHTML = n.outerHTML + e.outerHTML + t.outerHTML + r.outerHTML);
@@ -387,24 +387,39 @@
             });
           });
       },
+      b = function() {
+        var n = document.createElement("div");
+        return (
+          n.classList.add("contact-form"),
+          (n.innerHTML +=
+            '<form novalidate><div><label for="email">Email</label><input class="form-field" id="email" type="email" name="email" required></div><div><input id="submit-btn" type="submit"></div></form>'),
+          n
+        );
+      },
       h = function() {
+        var n = document.createElement("div");
+        return (
+          n.classList.add("menu"),
+          (n.innerHTML += "<div>Restaurant menu</div>"),
+          n
+        );
+      },
+      g = function() {
         var n,
           e = document.getElementById("pageContent"),
-          t = "Restaurant menu";
-        (e.innerHTML = t),
+          t = h();
+        (e.innerHTML = t.outerHTML),
           document.querySelectorAll("#nav li").forEach(function(e) {
             e.addEventListener("click", function() {
               (n = e.id), r(n);
             });
           });
         var r = function(n) {
-          "menu" === n
-            ? (t = "Restaurant menu")
-            : "contact" === n && (t = "Contact here"),
-            (e.innerHTML = t);
+          "menu" === n ? (t = h()) : "contact" === n && (t = b()),
+            (e.innerHTML = t.outerHTML);
         };
       };
     document.body.appendChild(p());
-    m(0), h();
+    m(0), g();
   }
 ]);
