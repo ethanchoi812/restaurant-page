@@ -2,7 +2,7 @@ import contact from "./contact";
 import menuContent from "./menuContent";
 
 const showContent = () => {
-  let contentDiv = document.getElementById("pageContent");
+  let contentDiv = document.createElement("div");
   let tabContent = menuContent();
 
   contentDiv.innerHTML = tabContent.outerHTML;
@@ -26,6 +26,8 @@ const showContent = () => {
 
     contentDiv.innerHTML = tabContent.outerHTML;
   };
+
+  return contentDiv;
 };
 
 export default showContent;

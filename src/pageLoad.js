@@ -1,4 +1,5 @@
 import slider from "./slider/slider";
+import showContent from "./showContent";
 
 const pageLoad = () => {
   let element = document.createElement("div");
@@ -11,7 +12,9 @@ const pageLoad = () => {
   let pageContent = '<div id="pageContent"></div>';
 
   element.innerHTML = title + nav;
+
   element.appendChild(slider());
+  element.appendChild(showContent());
 
   element.innerHTML += pageContent;
 

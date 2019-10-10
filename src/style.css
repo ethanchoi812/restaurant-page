@@ -101,3 +101,11 @@ img {
 .form-submit input[type="submit"]:hover {
   background: #ccc;
 }
+
+.has-error {
+  border-color: #ff0000;
+}
+
+.error-msg {
+  color: #ff0000;
+}
