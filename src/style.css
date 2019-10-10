@@ -63,3 +63,41 @@ img {
 #pageContent {
   padding: 20px 30px;
 }
+
+/* Form */
+
+.contact-form form {
+  margin: 0 auto;
+  width: 40%;
+}
+
+.form-field {
+  margin-bottom: 25px;
+}
+
+.form-field input[type="text"],
+.form-field input[type="email"],
+.form-field textarea {
+  padding: 8px 10px;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.form-field textarea {
+  height: 60px;
+}
+
+.form-submit input[type="submit"] {
+  font-family: "EB Garamond", serif;
+  font-size: 18px;
+  background: #eee;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 20px;
+}
+
+.form-submit input[type="submit"]:hover {
+  background: #ccc;
+}
