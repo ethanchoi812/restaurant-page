@@ -1,6 +1,6 @@
 const menuContent = () => {
   let menuDiv = document.createElement("div");
-  menuDiv.classList.add("menu");
+  menuDiv.classList.add("section", "menu");
 
   menuDiv.innerHTML += "<div>Restaurant menu</div>";
 

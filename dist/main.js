@@ -74,7 +74,7 @@
   function(n, e, t) {
     (n.exports = t(6)(!1)).push([
       n.i,
-      '.main {\n  margin: 0;\n  font-family: "EB Garamond", serif;\n}\n\nh1 {\n  text-align: center;\n}\n\n#nav li {\n  display: inline;\n  margin-right: 25px;\n}\n\n.slider-div {\n  position: relative;\n  overflow-x: hidden;\n  height: 50%;\n  width: 100%;\n}\n\n.nav-btn {\n  background: rgb(0, 0, 0, 0.4);\n  color: #ccc;\n  font-size: 60px;\n  padding: 5px 8px;\n  position: absolute;\n  top: 40%;\n  z-index: 99;\n}\n\n#image-container {\n  position: relative;\n  overflow-x: hidden;\n  width: 400%;\n  transition: transform 1s;\n}\n\nimg {\n  display: inline-block;\n  width: 25%;\n}\n\n#nav-btn-right {\n  right: 0;\n}\n\n.slide-marker {\n  position: absolute;\n  bottom: 5%;\n  left: 40%;\n}\n\n.slide-marker span {\n  background: #ccc;\n  display: inline-block;\n  border-radius: 50%;\n  border: 2px solid #fff;\n  margin-right: 15px;\n  padding: 10px;\n}\n\n#pageContent {\n  padding: 20px 30px;\n}\n\n/* Form */\n\n.contact-form form {\n  margin: 0 auto;\n  width: 40%;\n}\n\n.form-field {\n  margin-bottom: 25px;\n}\n\n.form-field input[type="text"],\n.form-field input[type="email"],\n.form-field textarea {\n  padding: 8px 10px;\n  font-size: 18px;\n  border: 1px solid #ccc;\n  border-radius: 5px;\n  width: 100%;\n}\n\n.form-field textarea {\n  height: 60px;\n}\n\n.form-submit input[type="submit"] {\n  font-family: "EB Garamond", serif;\n  font-size: 18px;\n  background: #eee;\n  border: none;\n  border-radius: 5px;\n  padding: 12px 20px;\n}\n\n.form-submit input[type="submit"]:hover {\n  background: #ccc;\n}\n\n.has-error {\n  border-color: #ff0000;\n}\n\n.error-msg {\n  color: #ff0000;\n}',
+      '.main {\n  margin: 0;\n  font-family: "EB Garamond", serif;\n}\n\nh1 {\n  text-align: center;\n}\n\n#nav li {\n  display: inline;\n  margin-right: 25px;\n}\n\n.slider-div {\n  position: relative;\n  overflow-x: hidden;\n  height: 50%;\n  width: 100%;\n}\n\n.nav-btn {\n  background: rgb(0, 0, 0, 0.4);\n  color: #ccc;\n  font-size: 60px;\n  padding: 5px 8px;\n  position: absolute;\n  top: 40%;\n  z-index: 99;\n}\n\n#image-container {\n  position: relative;\n  overflow-x: hidden;\n  width: 400%;\n  transition: transform 1s;\n}\n\nimg {\n  display: inline-block;\n  width: 25%;\n}\n\n#nav-btn-right {\n  right: 0;\n}\n\n.slide-marker {\n  position: absolute;\n  bottom: 5%;\n  left: 40%;\n}\n\n.slide-marker span {\n  background: #ccc;\n  display: inline-block;\n  border-radius: 50%;\n  border: 2px solid #fff;\n  margin-right: 15px;\n  padding: 10px;\n}\n\n.section {\n  padding: 30px 20px;\n}\n\n/* Form */\n\n.contact-form form {\n  margin: 0 auto;\n  width: 40%;\n}\n\n.form-field {\n  margin-bottom: 25px;\n}\n\n.form-field input[type="text"],\n.form-field input[type="email"],\n.form-field textarea {\n  padding: 8px 10px;\n  font-size: 18px;\n  border: 1px solid #ccc;\n  border-radius: 5px;\n  width: 100%;\n}\n\n.form-field textarea {\n  height: 60px;\n}\n\n.form-submit input[type="submit"] {\n  font-family: "EB Garamond", serif;\n  font-size: 18px;\n  background: #eee;\n  border: none;\n  border-radius: 5px;\n  padding: 12px 20px;\n}\n\n.form-submit input[type="submit"]:hover {\n  background: #ccc;\n}\n\n.has-error {\n  border-color: #ff0000;\n}\n\n.error-msg {\n  color: #ff0000;\n}\n',
       ""
     ]);
   },
@@ -92,11 +92,11 @@
               if (e && "function" == typeof btoa) {
                 var i =
                     ((o = r),
-                    (d = btoa(unescape(encodeURIComponent(JSON.stringify(o))))),
-                    (s = "sourceMappingURL=data:application/json;charset=utf-8;base64,".concat(
-                      d
+                    (s = btoa(unescape(encodeURIComponent(JSON.stringify(o))))),
+                    (d = "sourceMappingURL=data:application/json;charset=utf-8;base64,".concat(
+                      s
                     )),
-                    "/*# ".concat(s, " */")),
+                    "/*# ".concat(d, " */")),
                   a = r.sources.map(function(n) {
                     return "/*# sourceURL="
                       .concat(r.sourceRoot)
@@ -107,7 +107,7 @@
                   .concat([i])
                   .join("\n");
               }
-              var o, d, s;
+              var o, s, d;
               return [t].join("\n");
             })(e, n);
             return e[2] ? "@media ".concat(e[2], "{").concat(t, "}") : t;
@@ -120,12 +120,12 @@
             null != a && (r[a] = !0);
           }
           for (var o = 0; o < n.length; o++) {
-            var d = n[o];
-            (null != d[0] && r[d[0]]) ||
-              (t && !d[2]
-                ? (d[2] = t)
-                : t && (d[2] = "(".concat(d[2], ") and (").concat(t, ")")),
-              e.push(d));
+            var s = n[o];
+            (null != s[0] && r[s[0]]) ||
+              (t && !s[2]
+                ? (s[2] = t)
+                : t && (s[2] = "(".concat(s[2], ") and (").concat(t, ")")),
+              e.push(s));
           }
         }),
         e
@@ -162,16 +162,16 @@
           return n[e];
         };
       })();
-    function d(n, e) {
+    function s(n, e) {
       for (var t = [], r = {}, i = 0; i < n.length; i++) {
         var a = n[i],
           o = e.base ? a[0] + e.base : a[0],
-          d = { css: a[1], media: a[2], sourceMap: a[3] };
-        r[o] ? r[o].parts.push(d) : t.push((r[o] = { id: o, parts: [d] }));
+          s = { css: a[1], media: a[2], sourceMap: a[3] };
+        r[o] ? r[o].parts.push(s) : t.push((r[o] = { id: o, parts: [s] }));
       }
       return t;
     }
-    function s(n, e) {
+    function d(n, e) {
       for (var t = 0; t < n.length; t++) {
         var r = n[t],
           a = i[r.id],
@@ -180,8 +180,8 @@
           for (a.refs++; o < a.parts.length; o++) a.parts[o](r.parts[o]);
           for (; o < r.parts.length; o++) a.parts.push(b(r.parts[o], e));
         } else {
-          for (var d = []; o < r.parts.length; o++) d.push(b(r.parts[o], e));
-          i[r.id] = { id: r.id, refs: 1, parts: d };
+          for (var s = []; o < r.parts.length; o++) s.push(b(r.parts[o], e));
+          i[r.id] = { id: r.id, refs: 1, parts: s };
         }
       }
     }
@@ -281,16 +281,16 @@
       ((e = e || {}).attributes =
         "object" == typeof e.attributes ? e.attributes : {}),
         e.singleton || "boolean" == typeof e.singleton || (e.singleton = a());
-      var t = d(n, e);
+      var t = s(n, e);
       return (
-        s(t, e),
+        d(t, e),
         function(n) {
           for (var r = [], a = 0; a < t.length; a++) {
             var o = t[a],
               c = i[o.id];
             c && (c.refs--, r.push(c));
           }
-          n && s(d(n, e), e);
+          n && d(s(n, e), e);
           for (var l = 0; l < r.length; l++) {
             var u = r[l];
             if (0 === u.refs) {
@@ -310,8 +310,8 @@
       i = t.n(r),
       a = t(1),
       o = t.n(a),
-      d = t(2),
-      s = t.n(d),
+      s = t(2),
+      d = t.n(s),
       c = t(3),
       l = t.n(c),
       u = function(n) {
@@ -321,66 +321,68 @@
       f = function() {
         var n = u(i.a),
           e = u(o.a),
-          t = u(s.a),
+          t = u(d.a),
           r = u(l.a),
           a = document.createElement("div");
         a.setAttribute("id", "image-container"),
           (a.innerHTML = n.outerHTML + e.outerHTML + t.outerHTML + r.outerHTML);
-        var d = document.createElement("div");
-        d.className = "slider-div";
-        (d.innerHTML +=
+        var s = document.createElement("div");
+        s.className = "slider-div";
+        (s.innerHTML +=
           '<span class="nav-btn" id="nav-btn-left">&lt;</span><span class="nav-btn" id="nav-btn-right">&gt;</span>'),
-          d.appendChild(a);
+          s.appendChild(a);
         return (
-          (d.innerHTML +=
+          (s.innerHTML +=
             '<div class="slide-marker"><span id="slide-marker-0" data-slide-index="0"></span><span id="slide-marker-1" data-slide-index="1"></span><span id="slide-marker-2" data-slide-index="2"></span><span id="slide-marker-3" data-slide-index="3"></span></div>'),
-          d
+          s
         );
       },
       p = function() {
         var n = document.createElement("div");
         return (
-          n.classList.add("contact-form"),
-          (n.innerHTML +=
-            '<form novalidate><div class="form-field"><label for="name">Name</label><input id="name" type="text" name="name" required></div><div class="form-field"><label for="email">Email</label><input id="email" type="email" name="email" required></div><div class="form-field"><label for="message">Your Message</label><textarea required></textarea></div><div class="form-submit"><input id="submit-btn" type="submit" value="Send"></div></form>'),
+          n.classList.add("section", "menu"),
+          (n.innerHTML += "<div>Restaurant menu</div>"),
           n
         );
       },
       m = function() {
         var n = document.createElement("div");
         return (
-          n.classList.add("menu"),
-          (n.innerHTML += "<div>Restaurant menu</div>"),
+          n.classList.add("section", "contact-form"),
+          (n.style.display = "none"),
+          (n.innerHTML +=
+            '<form novalidate><div class="form-field"><label for="name">Name</label><input id="name" type="text" name="name" required></div><div class="form-field"><label for="email">Email</label><input id="email" type="email" name="email" required></div><div class="form-field"><label for="message">Your Message</label><textarea required></textarea></div><div class="form-submit"><input id="submit-btn" type="submit" value="Send"></div></form>'),
           n
         );
       },
       v = function() {
-        var n,
-          e = document.createElement("div"),
-          t = m();
-        (e.innerHTML = t.outerHTML),
-          document.querySelectorAll("#nav li").forEach(function(e) {
-            e.addEventListener("click", function() {
-              (n = e.id), r(n);
-            });
-          });
-        var r = function(n) {
-          "menu" === n ? (t = m()) : "contact" === n && (t = p()),
-            (e.innerHTML = t.outerHTML);
-        };
-        return e;
-      },
-      b = function() {
         var n = document.createElement("div");
         n.classList.add("main");
         return (
           (n.innerHTML =
-            '<h1>The City Restaurant</h1><div><ul id="nav"><li id="menu">Menu</li><li id="contact">Contact</li></ul></div>'),
+            '<h1>The City Restaurant</h1><div>\n    <ul id="nav">\n    <li id="menu">Menu</li>\n    <li id="contact-form">Contact</li>\n    </ul>\n    </div>'),
           n.appendChild(f()),
-          n.appendChild(v()),
-          (n.innerHTML += '<div id="pageContent"></div>'),
+          n.appendChild(p()),
+          n.appendChild(m()),
           n
         );
+      },
+      b = function() {
+        var n,
+          e = document.querySelectorAll("#nav li"),
+          t = document.querySelectorAll(".section");
+        e.forEach(function(e) {
+          e.addEventListener("click", function() {
+            (n = e.id), r(n);
+          });
+        });
+        var r = function(n) {
+          t.forEach(function(e) {
+            e.classList.contains(n)
+              ? (e.style.display = "block")
+              : (e.style.display = "none");
+          });
+        };
       },
       h = function(n) {
         var e = document.querySelector(".slider-div").offsetWidth;
@@ -422,31 +424,29 @@
           });
       },
       y = function() {
-        var n = document.querySelectorAll(
-          ".form-field input, .form-field textarea"
-        );
-        console.log(n),
-          n.forEach(function(n) {
-            n.addEventListener("blur", function() {
-              if (n.validity.valueMissing) {
-                return e(n, "This field is required!"), !1;
+        document
+          .querySelectorAll(".form-field input, .form-field textarea")
+          .forEach(function(t) {
+            t.addEventListener("blur", function() {
+              if (t.validity.valueMissing) {
+                return n(t, "This field is required!"), !1;
               }
-              if (!n.validity.valueMissing) return t(n), !0;
+              if (!t.validity.valueMissing) return e(t), !0;
             });
           });
-        var e = function(n, e) {
+        var n = function(n, e) {
             n.classList.add("has-error");
             var t = document.createElement("span");
             t.classList.add("error-msg"),
               (t.innerHTML = e),
               n.nextElementSibling || n.parentNode.appendChild(t);
           },
-          t = function(n) {
+          e = function(n) {
             var e = n.parentNode.querySelector(".error-msg");
             e && n.parentNode.removeChild(e), n.classList.remove("has-error");
           };
       };
-    document.body.appendChild(b());
-    g(0), y();
+    document.body.appendChild(v());
+    g(0), y(), b();
   }
 ]);

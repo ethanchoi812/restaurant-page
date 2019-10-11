@@ -1,6 +1,8 @@
 const contact = () => {
   let formDiv = document.createElement("div");
-  formDiv.classList.add("contact-form");
+  formDiv.classList.add("section", "contact-form");
+
+  formDiv.style.display = "none";
 
   formDiv.innerHTML +=
     "<form novalidate>" +

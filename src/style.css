@@ -60,8 +60,8 @@ img {
   padding: 10px;
 }
 
-#pageContent {
-  padding: 20px 30px;
+.section {
+  padding: 30px 20px;
 }
 
 /* Form */

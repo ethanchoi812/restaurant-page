@@ -2,7 +2,6 @@ const validateRequired = () => {
   let fields = document.querySelectorAll(
     ".form-field input, .form-field textarea"
   );
-  console.log(fields);
 
   fields.forEach(field => {
     field.addEventListener("blur", () => {
