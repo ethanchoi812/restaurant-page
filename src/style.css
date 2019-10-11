@@ -60,8 +60,8 @@ img {
   padding: 10px;
 }
 
-#pageContent {
-  padding: 20px 30px;
+.section {
+  padding: 30px 20px;
 }
 
 /* Form */
@@ -100,4 +100,12 @@ img {
 
 .form-submit input[type="submit"]:hover {
   background: #ccc;
+}
+
+.has-error {
+  border-color: #ff0000;
+}
+
+.error-msg {
+  color: #ff0000;
 }

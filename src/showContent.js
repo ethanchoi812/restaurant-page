@@ -1,13 +1,7 @@
-import contact from "./contact";
-import menuContent from "./menuContent";
-
 const showContent = () => {
-  let contentDiv = document.getElementById("pageContent");
-  let tabContent = menuContent();
-
-  contentDiv.innerHTML = tabContent.outerHTML;
-
   let navItems = document.querySelectorAll("#nav li");
+  let sections = document.querySelectorAll(".section");
+
   let tab;
 
   navItems.forEach(nav => {
@@ -18,13 +12,13 @@ const showContent = () => {
   });
 
   const setContent = tab => {
-    if (tab === "menu") {
-      tabContent = menuContent();
-    } else if (tab === "contact") {
-      tabContent = contact();
-    }
-
-    contentDiv.innerHTML = tabContent.outerHTML;
+    sections.forEach(section => {
+      if (section.classList.contains(tab)) {
+        section.style.display = "block";
+      } else {
+        section.style.display = "none";
+      }
+    });
   };
 };
 

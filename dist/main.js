@@ -74,7 +74,7 @@
   function(n, e, t) {
     (n.exports = t(6)(!1)).push([
       n.i,
-      '.main {\n  margin: 0;\n  font-family: "EB Garamond", serif;\n}\n\nh1 {\n  text-align: center;\n}\n\n#nav li {\n  display: inline;\n  margin-right: 25px;\n}\n\n.slider-div {\n  position: relative;\n  overflow-x: hidden;\n  height: 50%;\n  width: 100%;\n}\n\n.nav-btn {\n  background: rgb(0, 0, 0, 0.4);\n  color: #ccc;\n  font-size: 60px;\n  padding: 5px 8px;\n  position: absolute;\n  top: 40%;\n  z-index: 99;\n}\n\n#image-container {\n  position: relative;\n  overflow-x: hidden;\n  width: 400%;\n  transition: transform 1s;\n}\n\nimg {\n  display: inline-block;\n  width: 25%;\n}\n\n#nav-btn-right {\n  right: 0;\n}\n\n.slide-marker {\n  position: absolute;\n  bottom: 5%;\n  left: 40%;\n}\n\n.slide-marker span {\n  background: #ccc;\n  display: inline-block;\n  border-radius: 50%;\n  border: 2px solid #fff;\n  margin-right: 15px;\n  padding: 10px;\n}\n\n#pageContent {\n  padding: 20px 30px;\n}\n\n/* Form */\n\n.contact-form form {\n  margin: 0 auto;\n  width: 40%;\n}\n\n.form-field {\n  margin-bottom: 25px;\n}\n\n.form-field input[type="text"],\n.form-field input[type="email"],\n.form-field textarea {\n  padding: 8px 10px;\n  font-size: 18px;\n  border: 1px solid #ccc;\n  border-radius: 5px;\n  width: 100%;\n}\n\n.form-field textarea {\n  height: 60px;\n}\n\n.form-submit input[type="submit"] {\n  font-family: "EB Garamond", serif;\n  font-size: 18px;\n  background: #eee;\n  border: none;\n  border-radius: 5px;\n  padding: 12px 20px;\n}\n\n.form-submit input[type="submit"]:hover {\n  background: #ccc;\n}',
+      '.main {\n  margin: 0;\n  font-family: "EB Garamond", serif;\n}\n\nh1 {\n  text-align: center;\n}\n\n#nav li {\n  display: inline;\n  margin-right: 25px;\n}\n\n.slider-div {\n  position: relative;\n  overflow-x: hidden;\n  height: 50%;\n  width: 100%;\n}\n\n.nav-btn {\n  background: rgb(0, 0, 0, 0.4);\n  color: #ccc;\n  font-size: 60px;\n  padding: 5px 8px;\n  position: absolute;\n  top: 40%;\n  z-index: 99;\n}\n\n#image-container {\n  position: relative;\n  overflow-x: hidden;\n  width: 400%;\n  transition: transform 1s;\n}\n\nimg {\n  display: inline-block;\n  width: 25%;\n}\n\n#nav-btn-right {\n  right: 0;\n}\n\n.slide-marker {\n  position: absolute;\n  bottom: 5%;\n  left: 40%;\n}\n\n.slide-marker span {\n  background: #ccc;\n  display: inline-block;\n  border-radius: 50%;\n  border: 2px solid #fff;\n  margin-right: 15px;\n  padding: 10px;\n}\n\n.section {\n  padding: 30px 20px;\n}\n\n/* Form */\n\n.contact-form form {\n  margin: 0 auto;\n  width: 40%;\n}\n\n.form-field {\n  margin-bottom: 25px;\n}\n\n.form-field input[type="text"],\n.form-field input[type="email"],\n.form-field textarea {\n  padding: 8px 10px;\n  font-size: 18px;\n  border: 1px solid #ccc;\n  border-radius: 5px;\n  width: 100%;\n}\n\n.form-field textarea {\n  height: 60px;\n}\n\n.form-submit input[type="submit"] {\n  font-family: "EB Garamond", serif;\n  font-size: 18px;\n  background: #eee;\n  border: none;\n  border-radius: 5px;\n  padding: 12px 20px;\n}\n\n.form-submit input[type="submit"]:hover {\n  background: #ccc;\n}\n\n.has-error {\n  border-color: #ff0000;\n}\n\n.error-msg {\n  color: #ff0000;\n}\n',
       ""
     ]);
   },
@@ -92,11 +92,11 @@
               if (e && "function" == typeof btoa) {
                 var i =
                     ((o = r),
-                    (d = btoa(unescape(encodeURIComponent(JSON.stringify(o))))),
-                    (c = "sourceMappingURL=data:application/json;charset=utf-8;base64,".concat(
-                      d
+                    (s = btoa(unescape(encodeURIComponent(JSON.stringify(o))))),
+                    (d = "sourceMappingURL=data:application/json;charset=utf-8;base64,".concat(
+                      s
                     )),
-                    "/*# ".concat(c, " */")),
+                    "/*# ".concat(d, " */")),
                   a = r.sources.map(function(n) {
                     return "/*# sourceURL="
                       .concat(r.sourceRoot)
@@ -107,7 +107,7 @@
                   .concat([i])
                   .join("\n");
               }
-              var o, d, c;
+              var o, s, d;
               return [t].join("\n");
             })(e, n);
             return e[2] ? "@media ".concat(e[2], "{").concat(t, "}") : t;
@@ -120,12 +120,12 @@
             null != a && (r[a] = !0);
           }
           for (var o = 0; o < n.length; o++) {
-            var d = n[o];
-            (null != d[0] && r[d[0]]) ||
-              (t && !d[2]
-                ? (d[2] = t)
-                : t && (d[2] = "(".concat(d[2], ") and (").concat(t, ")")),
-              e.push(d));
+            var s = n[o];
+            (null != s[0] && r[s[0]]) ||
+              (t && !s[2]
+                ? (s[2] = t)
+                : t && (s[2] = "(".concat(s[2], ") and (").concat(t, ")")),
+              e.push(s));
           }
         }),
         e
@@ -162,16 +162,16 @@
           return n[e];
         };
       })();
-    function d(n, e) {
+    function s(n, e) {
       for (var t = [], r = {}, i = 0; i < n.length; i++) {
         var a = n[i],
           o = e.base ? a[0] + e.base : a[0],
-          d = { css: a[1], media: a[2], sourceMap: a[3] };
-        r[o] ? r[o].parts.push(d) : t.push((r[o] = { id: o, parts: [d] }));
+          s = { css: a[1], media: a[2], sourceMap: a[3] };
+        r[o] ? r[o].parts.push(s) : t.push((r[o] = { id: o, parts: [s] }));
       }
       return t;
     }
-    function c(n, e) {
+    function d(n, e) {
       for (var t = 0; t < n.length; t++) {
         var r = n[t],
           a = i[r.id],
@@ -180,12 +180,12 @@
           for (a.refs++; o < a.parts.length; o++) a.parts[o](r.parts[o]);
           for (; o < r.parts.length; o++) a.parts.push(b(r.parts[o], e));
         } else {
-          for (var d = []; o < r.parts.length; o++) d.push(b(r.parts[o], e));
-          i[r.id] = { id: r.id, refs: 1, parts: d };
+          for (var s = []; o < r.parts.length; o++) s.push(b(r.parts[o], e));
+          i[r.id] = { id: r.id, refs: 1, parts: s };
         }
       }
     }
-    function s(n) {
+    function c(n) {
       var e = document.createElement("style");
       if (void 0 === n.attributes.nonce) {
         var r = t.nc;
@@ -208,15 +208,15 @@
       }
       return e;
     }
-    var u,
-      l =
-        ((u = []),
+    var l,
+      u =
+        ((l = []),
         function(n, e) {
-          return (u[n] = e), u.filter(Boolean).join("\n");
+          return (l[n] = e), l.filter(Boolean).join("\n");
         });
     function f(n, e, t, r) {
       var i = t ? "" : r.css;
-      if (n.styleSheet) n.styleSheet.cssText = l(e, i);
+      if (n.styleSheet) n.styleSheet.cssText = u(e, i);
       else {
         var a = document.createTextNode(i),
           o = n.childNodes;
@@ -250,11 +250,11 @@
       var t, r, i;
       if (e.singleton) {
         var a = v++;
-        (t = m || (m = s(e))),
+        (t = m || (m = c(e))),
           (r = f.bind(null, t, a, !1)),
           (i = f.bind(null, t, a, !0));
       } else
-        (t = s(e)),
+        (t = c(e)),
           (r = p.bind(null, t, e)),
           (i = function() {
             !(function(n) {
@@ -281,21 +281,21 @@
       ((e = e || {}).attributes =
         "object" == typeof e.attributes ? e.attributes : {}),
         e.singleton || "boolean" == typeof e.singleton || (e.singleton = a());
-      var t = d(n, e);
+      var t = s(n, e);
       return (
-        c(t, e),
+        d(t, e),
         function(n) {
           for (var r = [], a = 0; a < t.length; a++) {
             var o = t[a],
-              s = i[o.id];
-            s && (s.refs--, r.push(s));
+              c = i[o.id];
+            c && (c.refs--, r.push(c));
           }
-          n && c(d(n, e), e);
-          for (var u = 0; u < r.length; u++) {
-            var l = r[u];
-            if (0 === l.refs) {
-              for (var f = 0; f < l.parts.length; f++) l.parts[f]();
-              delete i[l.id];
+          n && d(s(n, e), e);
+          for (var l = 0; l < r.length; l++) {
+            var u = r[l];
+            if (0 === u.refs) {
+              for (var f = 0; f < u.parts.length; f++) u.parts[f]();
+              delete i[u.id];
             }
           }
         }
@@ -310,45 +310,81 @@
       i = t.n(r),
       a = t(1),
       o = t.n(a),
-      d = t(2),
-      c = t.n(d),
-      s = t(3),
-      u = t.n(s),
-      l = function(n) {
+      s = t(2),
+      d = t.n(s),
+      c = t(3),
+      l = t.n(c),
+      u = function(n) {
         var e = new Image();
         return (e.src = n), e;
       },
       f = function() {
-        var n = l(i.a),
-          e = l(o.a),
-          t = l(c.a),
-          r = l(u.a),
+        var n = u(i.a),
+          e = u(o.a),
+          t = u(d.a),
+          r = u(l.a),
           a = document.createElement("div");
         a.setAttribute("id", "image-container"),
           (a.innerHTML = n.outerHTML + e.outerHTML + t.outerHTML + r.outerHTML);
-        var d = document.createElement("div");
-        d.className = "slider-div";
-        (d.innerHTML +=
+        var s = document.createElement("div");
+        s.className = "slider-div";
+        (s.innerHTML +=
           '<span class="nav-btn" id="nav-btn-left">&lt;</span><span class="nav-btn" id="nav-btn-right">&gt;</span>'),
-          d.appendChild(a);
+          s.appendChild(a);
         return (
-          (d.innerHTML +=
+          (s.innerHTML +=
             '<div class="slide-marker"><span id="slide-marker-0" data-slide-index="0"></span><span id="slide-marker-1" data-slide-index="1"></span><span id="slide-marker-2" data-slide-index="2"></span><span id="slide-marker-3" data-slide-index="3"></span></div>'),
-          d
+          s
         );
       },
       p = function() {
         var n = document.createElement("div");
-        n.classList.add("main");
         return (
-          (n.innerHTML =
-            '<h1>The City Restaurant</h1><div><ul id="nav"><li id="menu">Menu</li><li id="contact">Contact</li></ul></div>'),
-          n.appendChild(f()),
-          (n.innerHTML += '<div id="pageContent"></div>'),
+          n.classList.add("section", "menu"),
+          (n.innerHTML += "<div>Restaurant menu</div>"),
           n
         );
       },
-      m = function(n) {
+      m = function() {
+        var n = document.createElement("div");
+        return (
+          n.classList.add("section", "contact-form"),
+          (n.style.display = "none"),
+          (n.innerHTML +=
+            '<form novalidate><div class="form-field"><label for="name">Name</label><input id="name" type="text" name="name" required></div><div class="form-field"><label for="email">Email</label><input id="email" type="email" name="email" required></div><div class="form-field"><label for="message">Your Message</label><textarea required></textarea></div><div class="form-submit"><input id="submit-btn" type="submit" value="Send"></div></form>'),
+          n
+        );
+      },
+      v = function() {
+        var n = document.createElement("div");
+        n.classList.add("main");
+        return (
+          (n.innerHTML =
+            '<h1>The City Restaurant</h1><div>\n    <ul id="nav">\n    <li id="menu">Menu</li>\n    <li id="contact-form">Contact</li>\n    </ul>\n    </div>'),
+          n.appendChild(f()),
+          n.appendChild(p()),
+          n.appendChild(m()),
+          n
+        );
+      },
+      b = function() {
+        var n,
+          e = document.querySelectorAll("#nav li"),
+          t = document.querySelectorAll(".section");
+        e.forEach(function(e) {
+          e.addEventListener("click", function() {
+            (n = e.id), r(n);
+          });
+        });
+        var r = function(n) {
+          t.forEach(function(e) {
+            e.classList.contains(n)
+              ? (e.style.display = "block")
+              : (e.style.display = "none");
+          });
+        };
+      },
+      h = function(n) {
         var e = document.querySelector(".slider-div").offsetWidth;
         document.getElementById(
           "image-container"
@@ -360,66 +396,57 @@
         }),
           (r.style.background = "#fff");
       },
-      v = function(n) {
+      g = function(n) {
         var e,
           t = document.getElementById("nav-btn-left"),
           r = document.getElementById("nav-btn-right"),
           i = n,
           a = function() {
             e = setInterval(function() {
-              return i < 4 && (m(i), i++), 4 === i && (i = 0), i;
+              return i < 4 && (h(i), i++), 4 === i && (i = 0), i;
             }, 4e3);
           },
           o = function() {
             clearInterval(e);
           };
-        m(i),
+        h(i),
           a(),
           t.addEventListener("click", function() {
-            return o(), i < 4 && i > 0 && m((i -= 1)), a(), i;
+            return o(), i < 4 && i > 0 && h((i -= 1)), a(), i;
           }),
           r.addEventListener("click", function() {
-            return o(), i < 3 && i >= 0 && m((i += 1)), a(), i;
+            return o(), i < 3 && i >= 0 && h((i += 1)), a(), i;
           }),
           document.querySelectorAll(".slide-marker span").forEach(function(n) {
             n.addEventListener("click", function() {
-              o(), (i = Number(n.dataset.slideIndex)), m(i), a();
+              o(), (i = Number(n.dataset.slideIndex)), h(i), a();
             });
           });
       },
-      b = function() {
-        var n = document.createElement("div");
-        return (
-          n.classList.add("contact-form"),
-          (n.innerHTML +=
-            '<form novalidate><div class="form-field"><label for="name">Name</label><input id="name" type="text" name="name" required></div><div class="form-field"><label for="email">Email</label><input id="email" type="email" name="email" required></div><div class="form-field"><label for="message">Your Message</label><textarea></textarea></div><div class="form-submit"><input id="submit-btn" type="submit" value="Send"></div></form>'),
-          n
-        );
-      },
-      g = function() {
-        var n = document.createElement("div");
-        return (
-          n.classList.add("menu"),
-          (n.innerHTML += "<div>Restaurant menu</div>"),
-          n
-        );
-      },
-      h = function() {
-        var n,
-          e = document.getElementById("pageContent"),
-          t = g();
-        (e.innerHTML = t.outerHTML),
-          document.querySelectorAll("#nav li").forEach(function(e) {
-            e.addEventListener("click", function() {
-              (n = e.id), r(n);
+      y = function() {
+        document
+          .querySelectorAll(".form-field input, .form-field textarea")
+          .forEach(function(t) {
+            t.addEventListener("blur", function() {
+              if (t.validity.valueMissing) {
+                return n(t, "This field is required!"), !1;
+              }
+              if (!t.validity.valueMissing) return e(t), !0;
             });
           });
-        var r = function(n) {
-          "menu" === n ? (t = g()) : "contact" === n && (t = b()),
-            (e.innerHTML = t.outerHTML);
-        };
+        var n = function(n, e) {
+            n.classList.add("has-error");
+            var t = document.createElement("span");
+            t.classList.add("error-msg"),
+              (t.innerHTML = e),
+              n.nextElementSibling || n.parentNode.appendChild(t);
+          },
+          e = function(n) {
+            var e = n.parentNode.querySelector(".error-msg");
+            e && n.parentNode.removeChild(e), n.classList.remove("has-error");
+          };
       };
-    document.body.appendChild(p());
-    v(0), h();
+    document.body.appendChild(v());
+    g(0), y(), b();
   }
 ]);
