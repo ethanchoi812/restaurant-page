@@ -424,24 +424,41 @@
           });
       },
       y = function() {
-        document
-          .querySelectorAll(".form-field input, .form-field textarea")
-          .forEach(function(t) {
-            t.addEventListener("blur", function() {
-              if (t.validity.valueMissing) {
-                return n(t, "This field is required!"), !1;
-              }
-              if (!t.validity.valueMissing) return e(t), !0;
+        var n = [],
+          e = document.querySelectorAll(
+            ".form-field input, .form-field textarea"
+          ),
+          t = document.querySelector('.form-field input[type="email"]'),
+          r = document.querySelector("form");
+        r.addEventListener("submit", function() {
+          if ((event.preventDefault(), n.includes(!1))) return !1;
+        }),
+          e.forEach(function(e) {
+            e.addEventListener("blur", function() {
+              !(function(e) {
+                if (e.validity.valueMissing) {
+                  i(e, "This field is required!"), n.push[!1];
+                }
+                e.validity.valueMissing || a(e);
+              })(e);
             });
+          }),
+          t.addEventListener("blur", function() {
+            !(function(e) {
+              if (e.validity.typeMismatch) {
+                i(e, "Please use valid email address"), n.push(!1);
+              }
+              e.validity.typeMismatch || a(e);
+            })(t);
           });
-        var n = function(n, e) {
+        var i = function(n, e) {
             n.classList.add("has-error");
             var t = document.createElement("span");
             t.classList.add("error-msg"),
               (t.innerHTML = e),
               n.nextElementSibling || n.parentNode.appendChild(t);
           },
-          e = function(n) {
+          a = function(n) {
             var e = n.parentNode.querySelector(".error-msg");
             e && n.parentNode.removeChild(e), n.classList.remove("has-error");
           };
