@@ -3,7 +3,6 @@ const validateRequired = () => {
   let fields = document.querySelectorAll(
     ".form-field input, .form-field textarea"
   );
-
   let emailField = document.querySelector('.form-field input[type="email"]');
   let form = document.querySelector("form");
 
@@ -34,19 +33,23 @@ const validateRequired = () => {
   form.addEventListener("submit", () => {
     event.preventDefault();
 
+    fields.forEach(field => checkRequiredField(field));
+
     if (isValid.includes(false)) {
       return false;
     }
   });
 
   fields.forEach(field => {
-    field.addEventListener("blur", () => {
+    field.addEventListener("blur", e => {
       checkRequiredField(field);
     });
   });
 
-  emailField.addEventListener("blur", () => {
-    checkEmailField(emailField);
+  emailField.addEventListener("blur", e => {
+    if (emailField.value !== "") {
+      checkEmailField(emailField);
+    }
   });
 
   const hasError = (field, msg) => {

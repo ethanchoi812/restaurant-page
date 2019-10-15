@@ -429,36 +429,45 @@
             ".form-field input, .form-field textarea"
           ),
           t = document.querySelector('.form-field input[type="email"]'),
-          r = document.querySelector("form");
+          r = document.querySelector("form"),
+          i = function(e) {
+            if (e.validity.valueMissing) {
+              a(e, "This field is required!"), n.push[!1];
+            }
+            e.validity.valueMissing || o(e);
+          };
         r.addEventListener("submit", function() {
-          if ((event.preventDefault(), n.includes(!1))) return !1;
+          if (
+            (event.preventDefault(),
+            e.forEach(function(n) {
+              return i(n);
+            }),
+            n.includes(!1))
+          )
+            return !1;
         }),
-          e.forEach(function(e) {
-            e.addEventListener("blur", function() {
-              !(function(e) {
-                if (e.validity.valueMissing) {
-                  i(e, "This field is required!"), n.push[!1];
-                }
-                e.validity.valueMissing || a(e);
-              })(e);
+          e.forEach(function(n) {
+            n.addEventListener("blur", function(e) {
+              i(n);
             });
           }),
-          t.addEventListener("blur", function() {
-            !(function(e) {
-              if (e.validity.typeMismatch) {
-                i(e, "Please use valid email address"), n.push(!1);
-              }
-              e.validity.typeMismatch || a(e);
-            })(t);
+          t.addEventListener("blur", function(e) {
+            "" !== t.value &&
+              (function(e) {
+                if (e.validity.typeMismatch) {
+                  a(e, "Please use valid email address"), n.push(!1);
+                }
+                e.validity.typeMismatch || o(e);
+              })(t);
           });
-        var i = function(n, e) {
+        var a = function(n, e) {
             n.classList.add("has-error");
             var t = document.createElement("span");
             t.classList.add("error-msg"),
               (t.innerHTML = e),
               n.nextElementSibling || n.parentNode.appendChild(t);
           },
-          a = function(n) {
+          o = function(n) {
             var e = n.parentNode.querySelector(".error-msg");
             e && n.parentNode.removeChild(e), n.classList.remove("has-error");
           };
